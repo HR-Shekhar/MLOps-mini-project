@@ -1,0 +1,48 @@
+base:
+  project_id: "MP137"
+  group_id: "G109"
+  random_state: 42
+
+paths:
+  raw_train: "data/raw/train.csv"
+  raw_later: "data/raw/later.csv"
+  raw_holdout: "data/raw/holdout_features.csv"
+  cleaned_train: "data/cleaned_train.csv"
+  findings: "reports/findings.yaml"
+  mlflow_db: "sqlite:///mlflow.db"
+  model_path: "models/model.joblib"
+  predictions_path: "predictions/holdout_predictions.csv"
+
+features:
+  target: "litres_per_day"
+  leaking_column: "litres_paid_in_passbook"
+  id_column: "record_id"
+  date_column: "date"
+  cluster_column: "village_cluster"
+  categorical:
+    - "breed_mix"
+    - "village_cluster"
+  numeric:
+    - "cows"
+    - "buffaloes"
+    - "fodder_price_rs"
+    - "temp_c"
+    - "vet_visits"
+    - "feed_kg"
+
+cleaning:
+  buffaloes_sentinel: -1
+  max_valid_feed_kg: 5000
+  min_valid_cows: 5
+  target_typo_threshold: 2000.0
+  target_typo_divisor: 10.0
+  valid_breed_mix:
+    - "mixed"
+    - "crossbred"
+    - "desi"
+
+model:
+  name: "RandomForestRegressor"
+  n_estimators: 100
+  max_depth: 10
+  min_samples_split: 5

@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# DVC local data files (raw large CSVs tracked by .dvc files)
+/data/raw/train.csv
+/data/raw/later.csv
+/data/train.csv
+/data/later.csv
+/data/cleaned_train.csv
+.dvc/cache/
+.dvc/tmp/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MLflow run artifacts (database mlflow.db IS committed)
+mlruns/
+mlartifacts/
+
+# OS specific
+.DS_Store
+Thumbs.db
