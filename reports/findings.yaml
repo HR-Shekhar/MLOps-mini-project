@@ -5,37 +5,43 @@
 group_id: "G109"          # your group id, e.g. "G042"
 problem_id: "MP137"
 
+
 data_issues:
-  # For each of the 7 kinds: present: true or false.
-  # If present is false, leave the other values as null.
   leaking_column:
     present: true
-    column: "litres_paid_in_passbook"           # the column that must not be used as a feature
+    column: litres_paid_in_passbook
+
   unit_mixup:
     present: false
-    column: null           # the column recorded in a different unit
-    group_value: null      # the value of village_cluster whose rows are affected
-    factor: null           # wrong value = right value x factor
+    column: null
+    group_value: null
+    factor: null
+
   sentinel_value:
     present: true
-    column: "buffaloes"
-    value: -1            # the special number typed instead of a blank
-    count: 55            # how many rows have it
+    column: buffaloes
+    value: -1
+    count: 55
+
   duplicate_rows:
     present: true
-    count: 48            # number of EXTRA copies (rows you would delete)
+    count: 48
+
   stuck_sensor:
     present: false
     column: null
-    start_date: null       # first date with the stuck value, YYYY-MM-DD
-    end_date: null         # last date with the stuck value, YYYY-MM-DD
+    start_date: null
+    end_date: null
+
   target_typos:
     present: true
-    count: 9            # rows whose target was typed 10 times too big
+    count: 9
+
   spelling_variants:
     present: true
-    column: "breed_mix"
-    true_levels: 3      # how many real categories there are after cleaning
+    column: breed_mix
+    true_levels: 3
+
 
 tracking:
   experiment_name: null
