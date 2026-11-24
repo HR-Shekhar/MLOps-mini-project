@@ -1,10 +1,9 @@
-# MP137 findings --- fill in every value, keep every key.
-# The marking tool reads this file. Write null only where the comment says so.
-# Use the exact column names and group values from your data files.
 
-group_id: "G109"          # your group id, e.g. "G042"
+# MP137 findings
+# Group G109
+
+group_id: "G109"
 problem_id: "MP137"
-
 
 data_issues:
   leaking_column:
@@ -42,27 +41,29 @@ data_issues:
     column: breed_mix
     true_levels: 3
 
-
 tracking:
-  experiment_name: null
-  best_run_id: null        # the MLflow run id of your v1 model
-  registered_model_name: null
-  champion_version: null
+  experiment_name: mp137-milk-collection
+  best_run_id: 28278e38655c4b64b7c0992ac454712a
+  registered_model_name: mp137-milk-predictor
+  champion_version: 1
 
 monitoring:
-  psi:                     # cleaned train.csv vs later.csv, 10 bins
+  psi:
     cows: null
     buffaloes: null
     fodder_price_rs: null
     temp_c: null
     vet_visits: null
     feed_kg: null
+
   most_drifted_feature: null
-  mae_by_group:            # v1 on later.csv, per value of village_cluster
+
+  mae_by_group:
     'Cluster A': null
     'Cluster B': null
     'Cluster C': null
+
   worst_served_group: null
-  mae_v1_on_check: null    # v1 on the last 30% of later.csv (by date)
-  mae_v2_on_check: null    # v2 on the same rows
-  decision: null           # promote or keep
+  mae_v1_on_check: null
+  mae_v2_on_check: null
+  decision: null
