@@ -13,7 +13,7 @@
 
 | Enrolment No. | Name | GitHub Username | Role |
 |---|---|---|---|
-| **S24CSEU1007** | Yogya Mittal | | Data Lead |
+| S24CSEU1007 | Yogya Mittal | yoge2006 | Data Lead
 | **S24CSEU1016** | Himanshu Shekhar | | Model Lead |
 | **S24CSEU1025** | Aarav Bansal | | Service Lead |
 | **S24CSEU1040** | Shivangi Duggal | | Ops Lead |
@@ -56,3 +56,12 @@ A dairy cooperative near Patna collects milk daily from village collection centr
 ├── .dvc/                               # DVC internal configuration
 └── .gitignore                          # Standard git ignore definitions
 ```
+## Running the Data Audit
+
+The data audit module checks seven data quality
+issues present in the training dataset.
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt

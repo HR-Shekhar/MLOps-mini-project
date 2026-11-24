@@ -1,39 +1,52 @@
-group_id: G109
-problem_id: MP137
+
+# MP137 findings
+# Group G109
+
+group_id: "G109"
+problem_id: "MP137"
+
 data_issues:
   leaking_column:
     present: true
     column: litres_paid_in_passbook
+
   unit_mixup:
     present: false
     column: null
     group_value: null
     factor: null
+
   sentinel_value:
     present: true
     column: buffaloes
     value: -1
     count: 55
+
   duplicate_rows:
     present: true
     count: 48
+
   stuck_sensor:
     present: false
     column: null
     start_date: null
     end_date: null
+
   target_typos:
     present: true
     count: 9
+
   spelling_variants:
     present: true
     column: breed_mix
     true_levels: 3
+
 tracking:
   experiment_name: mp137-milk-collection
   best_run_id: 28278e38655c4b64b7c0992ac454712a
   registered_model_name: mp137-milk-predictor
   champion_version: 1
+
 monitoring:
   psi:
     cows: null
@@ -42,11 +55,14 @@ monitoring:
     temp_c: null
     vet_visits: null
     feed_kg: null
+
   most_drifted_feature: null
+
   mae_by_group:
-    Cluster A: null
-    Cluster B: null
-    Cluster C: null
+    'Cluster A': null
+    'Cluster B': null
+    'Cluster C': null
+
   worst_served_group: null
   mae_v1_on_check: null
   mae_v2_on_check: null
